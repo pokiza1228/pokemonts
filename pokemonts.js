@@ -173,10 +173,39 @@ const pokemonts = [{
 ]
 for (let i = 0; i => pokemonts.length; i++) {
     const wrapper = document.querySelector(".pokemonts");
+
     const pokeont = pokemonts[i];
+    const pokemontItem = document.createElement("li");
+
     const pokemonImg = document.createElement("img");
     pokemonImg.src = pokeont.img;
     pokemonImg.className = ("pokemonts__img");
 
+    const pokemontName = document.createElement("h2");
+    pokemontName.textContent = pokeont.name;
+    pokemontName.className = ("pokemonts__name");
 
+
+
+
+
+
+
+    wrapper.append(pokemontItem);
+    pokemontItem.append(pokemonImg);
+    pokemontItem.append(pokemontName);
+
+
+
+    for (let j = 0; j => pokeont.type.length; j++) {
+        const typeList = document.createElement("ul");
+        typeList.className = ("pokemonts__list-type");
+
+        const typeItem = document.createElement("li");
+        typeItem.className = ("pokemonts__list-type-item");
+
+        pokemontItem.append(typeList);
+        typeList.append(typeItem);
+        typeItem.append(pokeont.type[j]);
+    }
 }
