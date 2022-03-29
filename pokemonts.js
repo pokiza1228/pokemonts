@@ -176,6 +176,7 @@ for (let i = 0; i < pokemonts.length; i++) {
 
     const pokeont = pokemonts[i];
     const pokemontItem = document.createElement("li");
+    pokemontItem.className = ("pokemonts__item")
 
     const pokemonImg = document.createElement("img");
     pokemonImg.src = pokeont.img;
@@ -206,5 +207,13 @@ for (let i = 0; i < pokemonts.length; i++) {
         typeItem.append(pokeont.type[j]);
     }
 
+    const kamchilik = document.createElement("ul");
+    pokemontItem.append(kamchilik);
+
+    for (let k = 0; k < pokeont.weaknesses.length; k++) {
+        const kamchilikItem = document.createElement("li");
+        kamchilik.append(kamchilikItem);
+        kamchilikItem.append(pokeont.weaknesses[k]);
+    }
 
 }
